@@ -1,8 +1,9 @@
 <script lang="ts">
     import Button from "$lib/components/ui/button/button.svelte";
     import { cn } from "$lib/utils";
+    import logo from "$lib/imgs/HAJAT@3x.png";
     import { toggleMode, mode } from "mode-watcher";
-    import { AlignJustify, XIcon,Sun,Moon } from "lucide-svelte";
+    import { AlignJustify, XIcon, Sun, Moon } from "lucide-svelte";
     import { fly } from "svelte/transition";
 
     const menuItem = [
@@ -50,22 +51,27 @@
 <header
     class="fixed left-0 top-0 z-50 w-full -translate-y-4 animate-fade-in border-b opacity-0 backdrop-blur-md"
 >
-    <!-- {#if innerWidth < 768} -->
     <div class="container flex h-14 items-center justify-between">
-        <a class="text-md flex items-center" href="/"> Svee UI </a>
+        <a class="text-md flex items-center size-14" href="/">
+            <img src={logo} alt="HAj Agency" class="w-full h-full" />
+        </a>
 
+        <ul class="mx-4 inline-flex space-x-7">
+            <li>
+                <Button href="/" variant="outline" size="default">Home</Button>
+            </li>
+        </ul>
         <div class="ml-auto flex h-full items-center">
             <Button
                 variant="secondary"
                 class="mr-6 text-sm"
                 on:click={toggleMode}
             >
-			{#if $mode === "light"  }
-			<Sun/>
-			{:else}
-			<Moon/>
-				
-			{/if}
+                {#if $mode === "light"}
+                    <Sun />
+                {:else}
+                    <Moon />
+                {/if}
             </Button>
         </div>
         <button class="ml-6 md:hidden" use:toggleOverflowHidden>
@@ -77,7 +83,6 @@
             {/if}
         </button>
     </div>
-    <!-- {/if} -->
 </header>
 
 <nav
@@ -93,7 +98,7 @@
 >
     {#if hamburgerMenuIsOpen === true}
         <div class="container flex h-14 items-center justify-between">
-            <a class="text-md flex items-center" href="/"> Svee UI </a>
+            <a class="text-md flex items-center" href="/"> Haj Agency </a>
 
             <button class="md:hidden" use:toggleOverflowHidden>
                 <span class="sr-only">Toggle menu</span>

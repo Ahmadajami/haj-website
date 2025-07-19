@@ -5,9 +5,9 @@
     import Button from "$lib/components/ui/button/button.svelte";
     import type { ObserverEventDetails } from "svelte-inview";
     import { inview } from "svelte-inview";
-
     import HeroDarkImg from "$lib/imgs/hero-dark.png";
-    import HeroLightImg from "$lib/imgs/hero-light.png";
+    import HeroLightImg from "$lib/imgs/hero-light.png"
+    ;
     let inView = false;
     const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) => {
         inView = detail.inView;

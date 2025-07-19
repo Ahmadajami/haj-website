@@ -40,12 +40,11 @@
     function shuffleArray(array: any[]) {
         let currentIndex = array.length;
         let randomIndex;
-        // While there remain elements to shuffle.
+
         while (currentIndex !== 0) {
-            // Pick a remaining element.
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;
-            // And swap it with the current element.
+
             [array[currentIndex], array[randomIndex]] = [
                 array[randomIndex],
                 array[currentIndex],
@@ -134,7 +133,7 @@
                         />
                     </div>
                     <div
-                        class="z-10 mt-4 flex flex-col items-center text-center text-primary bg-white/55 transform-gpu"
+                        class="z-10 mt-4 flex flex-col items-center text-center text-primary transform-gpu"
                     >
                         <h1 class="text-3xl font-bold lg:text-4xl">
                             Stop juggling multiple agencies.
